@@ -5,5 +5,6 @@ if [ "$TRAVIS_BRANCH" = "master" ]; then
 else
     TAG="$TRAVIS_BRANCH"
 fi
-docker build -f Dockerfile -t $TRAVIS_REPO_SLUG:$TAG .
-docker push $TRAVIS_REPO_SLUG
+FILE_NAME="smendiratta/cicd-pipe"
+docker build -f Dockerfile -t $FILE_NAME:$TAG .
+docker push $FILE_NAME:$TAG
